@@ -20,7 +20,7 @@
           <span class="fontTitle">数量</span>
           <span class="msg">此商品无限购数量</span>
         </div>
-        <van-stepper v-model="value" theme="round" button-size="22" disable-input/>
+        <van-stepper disable-input button-size="22" v-model="value"/>
       </div>
       <div class="info_sku">
         <div class="fontTitle">套餐</div>

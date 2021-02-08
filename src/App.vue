@@ -93,4 +93,20 @@
   .fontSimple {
     font-size: 16px;
   }
+
+  .colorSm {
+    color: #757575;
+  }
+
+  .mr {
+    margin-right: 15px;
+  }
+
+  .van-tabbar--fixed {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .van-stepper__input {
+    background-color: #fff;
+  }
 </style>
