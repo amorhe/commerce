@@ -2,6 +2,7 @@
   <van-popup
     :value="show"
     position="bottom"
+    safe-area-inset-bottom
     @click-overlay="cancel">
     <div class="pop_content">
       <div class="flexAlign info_content">

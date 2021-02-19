@@ -25,30 +25,43 @@
         <span class="fontTitle">订单管理</span>
         <span class="colorSm">全部</span>
       </div>
-      <div class="orderStatus flex">
-        <div>
-          <van-image class="icon" :src="require('@/assets/img/order1.png')"></van-image>
-          <span>待支付</span>
-        </div>
-        <div>
-          <van-image class="icon" :src="require('@/assets/img/order2.png')"></van-image>
-          <span>待发货</span>
-        </div>
-        <div>
-          <van-image class="icon" :src="require('@/assets/img/order3.png')"></van-image>
-          <span>待收货</span>
-        </div>
-        <div>
-          <van-image class="icon" :src="require('@/assets/img/order4.png')"></van-image>
-          <span>待晒单</span>
-        </div>
+      <!--      <div class="orderStatus flex">-->
+      <!--        <div>-->
+      <!--          <van-image class="icon" :src="require('@/assets/img/order1.png')"></van-image>-->
+      <!--          <span>待支付</span>-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <van-image class="icon" :src="require('@/assets/img/order2.png')"></van-image>-->
+      <!--          <span>待发货</span>-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <van-image class="icon" :src="require('@/assets/img/order3.png')"></van-image>-->
+      <!--          <span>待收货</span>-->
+      <!--        </div>-->
+      <!--        <div>-->
+      <!--          <van-image class="icon" :src="require('@/assets/img/order4.png')"></van-image>-->
+      <!--          <span>待晒单</span>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <div class="orderStatus">
+        <van-tabbar :fixed="false" :border="false">
+          <van-tabbar-item>
+            <span>待支付</span>
+            <template>
+              <van-image class="icon" :src="require('@/assets/img/order1.png')"></van-image>
+            </template>
+          </van-tabbar-item>
+          <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
+          <van-tabbar-item icon="friends-o" badge="5">标签</van-tabbar-item>
+          <van-tabbar-item icon="setting-o" badge="20">标签</van-tabbar-item>
+        </van-tabbar>
       </div>
       <div class="package flex">
         <div>
           <span class="mr fontTitle">钱包</span>
           <span class="colorSm">累计收益6720.28元</span>
         </div>
-        <van-icon name="arrow"/>
+        <van-icon class="colorSm" name="arrow"/>
       </div>
       <div class="tool">
         <div class="fontTitle">我的工具</div>
@@ -144,9 +157,9 @@
       padding: 23px 25px 47px;
 
       > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*align-items: center;*/
         color: #757575;
 
         .icon {
@@ -196,7 +209,7 @@
     .msg {
       position: fixed;
       left: 0;
-      bottom: 147px;
+      bottom: calc(147px + env(safe-area-inset-bottom));
       text-align: center;
       width: 100vw;
     }

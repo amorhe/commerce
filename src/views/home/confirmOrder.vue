@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <div class="address_content flex">
+    <div class="address_content flex" @click="chooseTrick">
       <span class="fontTitle">选择收货地址</span>
       <van-icon name="arrow"/>
     </div>
-    <div class="address_content flex">
+    <div class="address_content flex" @click="chooseTrick">
       <div>
         <span class="fontTitle">陈先生，18522222222</span>
         <span class="colorSm">四川省 成都市 高新区新希望国际B座29楼</span>
@@ -48,6 +48,41 @@
       <span class="fontTitle">实付金额：¥59.00</span>
       <van-button class="btn">立即支付</van-button>
     </div>
+    <van-popup v-model="show" position="bottom" @click-overlay="cancel" safe-area-inset-bottom>
+      <div class="modalAddress">
+        <div class="title flex">
+          <span class="fontTitle">选择收货地址</span>
+          <van-icon @click="cancel" class="close" name="cross"/>
+        </div>
+        <div class="list">
+          <div class="flex">
+            <div class="flexAlign">
+              <van-image class="icon" :src="require('@/assets/img/address_icon_active.png')"></van-image>
+              <span class="fontTitle">陈先生，18522222222</span>
+            </div>
+            <span>默认地址</span>
+          </div>
+          <span class="colorSm text">四川省 成都市 高新区新希望国际B座29楼四川省 成都市 高新区新希望国际B座29楼</span>
+        </div>
+        <div class="list">
+          <div class="flex">
+            <div class="flexAlign">
+              <van-image class="icon" :src="require('@/assets/img/address_icon.png')"></van-image>
+              <span class="fontTitle">陈先生，18522222222</span>
+            </div>
+          </div>
+          <span class="colorSm text">四川省 成都市 高新区新希望国际B座29楼</span>
+        </div>
+        <!--    没有地址    -->
+        <!--        <div class="no_address_div">-->
+        <!--          <van-image class="icon" :src="require('@/assets/img/no_address.png')"></van-image>-->
+        <!--          <span>暂无地址</span>-->
+        <!--        </div>-->
+        <div class="manager">
+          <div>地址管理</div>
+        </div>
+      </div>
+    </van-popup>
   </div>
 </template>
 
@@ -56,7 +91,16 @@
     name: 'confirmOrder',
     data () {
       return {
-        value: 1
+        value: 1,
+        show: false
+      }
+    },
+    methods: {
+      cancel () {
+        this.show = false
+      },
+      chooseTrick () {
+        this.show = true
       }
     }
   }
@@ -67,7 +111,7 @@
     height: 165px;
     padding: 0 30px;
 
-    >div {
+    > div {
       display: flex;
       flex-direction: column;
     }
@@ -164,6 +208,83 @@
       color: #fff;
       border: none;
       font-size: 22px;
+    }
+  }
+
+  .modalAddress {
+    height: calc(1177px + env(safe-area-inset-bottom));
+    overflow-y: scroll;
+
+    .title {
+      height: 126px;
+      padding: 0 30px;
+      border-bottom: 1px #F0F4F6 solid;
+
+      > span {
+        margin-left: 258px;
+      }
+
+      .close {
+        font-weight: bold;
+        font-size: 26px;
+      }
+    }
+
+    .list {
+      padding: 0 30px;
+      border-bottom: 1px #F0F4F6 solid;
+      height: 165px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: bold;
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 28px;
+      }
+
+      .text {
+        margin-left: 58px;
+      }
+    }
+
+    .no_address_div {
+      height: 916px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #757575;
+
+      .icon {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 40px;
+      }
+    }
+
+    .manager {
+      height: calc(133px + env(safe-area-inset-bottom));
+
+      > div {
+        width: 100vw;
+        height: 133px;
+        border-top: 1px #F0F4F6 solid;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        color: #3361C2;
+        font-size: 28px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: env(safe-area-inset-bottom);
+      }
     }
   }
 </style>

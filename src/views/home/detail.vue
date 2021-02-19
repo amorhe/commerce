@@ -266,10 +266,10 @@
   }
 
   .goods_action {
-    height: 120px;
+    height: calc(env(safe-area-inset-bottom) + 120px);
 
     .goodsAction {
-      width: 750px;
+      width: 100vw;
       height: 120px;
       position: fixed;
       bottom: 0;
@@ -277,6 +277,7 @@
       background: #fff;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
       color: #757575;
+      padding-bottom: env(safe-area-inset-bottom);
 
       > div {
         display: flex;

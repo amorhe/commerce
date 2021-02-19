@@ -52,6 +52,7 @@
     -moz-osx-font-smoothing: grayscale;
     color: #101010;
     font-size: 22px;
+    font-family: PingFangSC-Regular, PingFang SC;
   }
 
   #nav {
