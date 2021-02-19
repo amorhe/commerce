@@ -20,7 +20,8 @@ import {
   IndexBar,
   IndexAnchor,
   Popup,
-  Stepper
+  Stepper,
+  Badge
 } from 'vant'
 import 'vant/lib/index.less'
 
@@ -43,6 +44,7 @@ Vue.use(IndexBar)
 Vue.use(IndexAnchor)
 Vue.use(Popup)
 Vue.use(Stepper)
+Vue.use(Badge)
 
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */

@@ -8,13 +8,19 @@ const routes = [
     path: '/',
     name: 'Index',
     component: () => import('@/views/home/index'),
-    meta: { title: '首页', showTab: true }
+    meta: {
+      title: '首页',
+      showTab: true
+    }
   },
   {
     path: '/my',
     name: 'My',
     component: () => import('@/views/my/my'),
-    meta: { title: '我的', showTab: true }
+    meta: {
+      title: '我的',
+      showTab: true
+    }
   },
   {
     path: '/search',
@@ -30,9 +36,21 @@ const routes = [
   },
   {
     path: '/confirmOrder',
-    name: 'confirmOrder',
+    name: 'ConfirmOrder',
     component: () => import('@/views/home/confirmOrder'),
     meta: { title: '确认下单' }
+  },
+  {
+    path: '/order',
+    name: 'Order',
+    component: () => import('@/views/my/order'),
+    meta: { title: '订单管理' }
+  },
+  {
+    path: '/orderDetail',
+    name: 'OrderDetail',
+    component: () => import('@/views/my/orderDetail'),
+    meta: { title: '订单详情' }
   },
   {
     path: '/loginRegister',

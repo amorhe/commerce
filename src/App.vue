@@ -84,6 +84,12 @@
     font-weight: bold;
   }
 
+  .lineOne {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .lineMany {
     overflow: hidden;
     text-overflow: ellipsis;

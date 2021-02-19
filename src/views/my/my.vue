@@ -23,38 +23,33 @@
     <div class="main_body">
       <div class="flex">
         <span class="fontTitle">订单管理</span>
-        <span class="colorSm">全部</span>
+        <span class="colorSm" @click="checkOrders">全部</span>
       </div>
-      <!--      <div class="orderStatus flex">-->
-      <!--        <div>-->
-      <!--          <van-image class="icon" :src="require('@/assets/img/order1.png')"></van-image>-->
-      <!--          <span>待支付</span>-->
-      <!--        </div>-->
-      <!--        <div>-->
-      <!--          <van-image class="icon" :src="require('@/assets/img/order2.png')"></van-image>-->
-      <!--          <span>待发货</span>-->
-      <!--        </div>-->
-      <!--        <div>-->
-      <!--          <van-image class="icon" :src="require('@/assets/img/order3.png')"></van-image>-->
-      <!--          <span>待收货</span>-->
-      <!--        </div>-->
-      <!--        <div>-->
-      <!--          <van-image class="icon" :src="require('@/assets/img/order4.png')"></van-image>-->
-      <!--          <span>待晒单</span>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <div class="orderStatus">
-        <van-tabbar :fixed="false" :border="false">
-          <van-tabbar-item>
+      <div class="orderStatus flex">
+        <van-badge :dot="false">
+          <div class="content">
+            <van-image class="icon" :src="require('@/assets/img/order1.png')"></van-image>
             <span>待支付</span>
-            <template>
-              <van-image class="icon" :src="require('@/assets/img/order1.png')"></van-image>
-            </template>
-          </van-tabbar-item>
-          <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
-          <van-tabbar-item icon="friends-o" badge="5">标签</van-tabbar-item>
-          <van-tabbar-item icon="setting-o" badge="20">标签</van-tabbar-item>
-        </van-tabbar>
+          </div>
+        </van-badge>
+        <van-badge dot>
+          <div class="content">
+            <van-image class="icon" :src="require('@/assets/img/order2.png')"></van-image>
+            <span>待发货</span>
+          </div>
+        </van-badge>
+        <van-badge dot>
+          <div class="content">
+            <van-image class="icon" :src="require('@/assets/img/order3.png')"></van-image>
+            <span>待收货</span>
+          </div>
+        </van-badge>
+        <van-badge dot>
+          <div class="content">
+            <van-image class="icon" :src="require('@/assets/img/order4.png')"></van-image>
+            <span>待晒单</span>
+          </div>
+        </van-badge>
       </div>
       <div class="package flex">
         <div>
@@ -99,7 +94,12 @@
 
 <script>
   export default {
-    name: 'my'
+    name: 'my',
+    methods: {
+      checkOrders () {
+        this.$router.push('./order')
+      }
+    }
   }
 </script>
 
@@ -156,10 +156,10 @@
     .orderStatus {
       padding: 23px 25px 47px;
 
-      > div {
-        /*display: flex;*/
-        /*flex-direction: column;*/
-        /*align-items: center;*/
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         color: #757575;
 
         .icon {
