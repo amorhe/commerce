@@ -21,7 +21,13 @@ import {
   IndexAnchor,
   Popup,
   Stepper,
-  Badge
+  Badge,
+  Step,
+  Steps,
+  Uploader,
+  Field,
+  Tab,
+  Tabs
 } from 'vant'
 import 'vant/lib/index.less'
 
@@ -45,6 +51,12 @@ Vue.use(IndexAnchor)
 Vue.use(Popup)
 Vue.use(Stepper)
 Vue.use(Badge)
+Vue.use(Step)
+Vue.use(Steps)
+Vue.use(Uploader)
+Vue.use(Field)
+Vue.use(Tab)
+Vue.use(Tabs)
 
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */

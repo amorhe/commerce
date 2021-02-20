@@ -58,8 +58,8 @@
         <div class="flexAlign">
           <van-button class="btn">分享海报</van-button>
           <van-button class="btn" color="#F15663">立即支付</van-button>
-          <van-button class="btn" color="#494B5D">查看物流</van-button>
-          <van-button class="btn" color="#3361C2">立即晒单</van-button>
+          <van-button class="btn" color="#494B5D" to="/logistics">查看物流</van-button>
+          <van-button class="btn" color="#3361C2" to="/dryingSheet">立即晒单</van-button>
         </div>
       </div>
     </div>
@@ -168,7 +168,6 @@
       .btn {
         height: 60px;
         font-size: 22px;
-        font-weight: bold;
         margin-left: 10px;
       }
     }

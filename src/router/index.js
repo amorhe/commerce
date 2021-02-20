@@ -53,6 +53,24 @@ const routes = [
     meta: { title: '订单详情' }
   },
   {
+    path: '/logistics',
+    name: 'Logistics',
+    component: () => import('@/views/my/logistics'),
+    meta: { title: '查看物流' }
+  },
+  {
+    path: '/dryingSheet',
+    name: 'DryingSheet',
+    component: () => import('@/views/my/dryingSheet'),
+    meta: { title: '晒单' }
+  },
+  {
+    path: '/vip',
+    name: 'Vip',
+    component: () => import('@/views/my/vip'),
+    meta: { title: '会员中心' }
+  },
+  {
     path: '/loginRegister',
     name: 'LoginRegister',
     component: () => import('@/views/other/LoginRegister'),

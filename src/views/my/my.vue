@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="my_top">
+    <div class="my_top" @click="$router.push('./vip')">
       <div class="flex">
         <div>
           <div class="fontTitle">核算</div>

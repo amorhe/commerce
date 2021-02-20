@@ -8,7 +8,7 @@
       <span :class="active === 4 ? 'active' : ''" @click="tabClick(4)">待晒单</span>
     </div>
     <div class="main_list">
-      <div class="list" v-for="item in 9" :key="item" @click="checkDetail">
+      <div class="list" v-for="item in 9" :key="item" @click.prevent="checkDetail">
         <div class="content">
           <div class="status_msg colorSm">订单待支付，预计00:12:48后自动关闭订单</div>
           <div class="goods_box flex">
@@ -28,8 +28,8 @@
           <div class="handle_div">
             <van-button class="btn">分享海报</van-button>
             <van-button class="btn" color="#F15663">立即支付</van-button>
-            <van-button class="btn" color="#494B5D">查看物流</van-button>
-            <van-button class="btn" color="#3361C2">立即晒单</van-button>
+            <van-button class="btn" color="#494B5D" @click.stop="$router.push('./logistics')">查看物流</van-button>
+            <van-button class="btn" color="#3361C2" @click.stop="$router.push('./dryingSheet')">立即晒单</van-button>
           </div>
         </div>
       </div>
@@ -140,7 +140,6 @@
           .btn {
             height: 60px;
             font-size: 22px;
-            font-weight: bold;
             margin-left: 10px;
           }
         }
