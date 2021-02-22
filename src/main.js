@@ -27,7 +27,10 @@ import {
   Uploader,
   Field,
   Tab,
-  Tabs
+  Tabs,
+  RadioGroup,
+  Radio,
+  Area
 } from 'vant'
 import 'vant/lib/index.less'
 
@@ -57,6 +60,9 @@ Vue.use(Uploader)
 Vue.use(Field)
 Vue.use(Tab)
 Vue.use(Tabs)
+Vue.use(Radio)
+Vue.use(RadioGroup)
+Vue.use(Area)
 
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */

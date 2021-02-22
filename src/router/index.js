@@ -71,6 +71,60 @@ const routes = [
     meta: { title: '会员中心' }
   },
   {
+    path: '/vipRecord',
+    name: 'VipRecord',
+    component: () => import('@/views/my/vipRecord'),
+    meta: { title: '使用详情' }
+  },
+  {
+    path: '/sharePoster',
+    name: 'SharePoster',
+    component: () => import('@/views/my/sharePoster'),
+    meta: { title: '生成分享海报' }
+  },
+  {
+    path: '/vipExchange',
+    name: 'VipExchange',
+    component: () => import('@/views/my/vipExchange'),
+    meta: { title: '兑换会员' }
+  },
+  {
+    path: '/wallet',
+    name: 'Wallet',
+    component: () => import('@/views/my/wallet'),
+    meta: { title: '钱包' }
+  },
+  {
+    path: '/withdrawal',
+    name: 'Withdrawal',
+    component: () => import('@/views/my/withdrawal'),
+    meta: { title: '立即提现' }
+  },
+  {
+    path: '/bindChat',
+    name: 'BindChat',
+    component: () => import('@/views/my/bindChat'),
+    meta: { title: '绑定微信' }
+  },
+  {
+    path: '/tradeDetails',
+    name: 'TradeDetails',
+    component: () => import('@/views/my/tradeDetails'),
+    meta: { title: '交易明细' }
+  },
+  {
+    path: '/addressList',
+    name: 'AddressList',
+    component: () => import('@/views/my/addressList'),
+    meta: { title: '地址管理' }
+  },
+  {
+    path: '/addressEdit',
+    name: 'AddressEdit',
+    component: () => import('@/views/my/addressEdit'),
+    meta: { title: '编辑地址' }
+  },
+  {
     path: '/loginRegister',
     name: 'LoginRegister',
     component: () => import('@/views/other/LoginRegister'),

@@ -51,7 +51,7 @@
           </div>
         </van-badge>
       </div>
-      <div class="package flex">
+      <div class="package flex" @click="$router.push('./wallet')">
         <div>
           <span class="mr fontTitle">钱包</span>
           <span class="colorSm">累计收益6720.28元</span>
@@ -61,7 +61,7 @@
       <div class="tool">
         <div class="fontTitle">我的工具</div>
         <div class="content">
-          <div>
+          <div @click="$router.push('./addressList')">
             <van-image class="icon" :src="require('@/assets/img/tool1.png')"></van-image>
             <span>地址管理</span>
           </div>

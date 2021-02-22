@@ -28,7 +28,7 @@
       </van-swipe>
     </div>
     <div class="main_body">
-      <div class="package flex">
+      <div class="package flex" @click="$router.push('./vipRecord')">
         <div class="flexAlign">
           <van-image class="avatar"
                      src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=306152466,1066631514&fm=11&gp=0.jpg"
@@ -43,7 +43,7 @@
       </div>
       <div class="vip_activity">
         <span class="fontTitle">会员活动</span>
-        <div class="activity_box">
+        <div class="activity_box" @click="$router.push('./sharePoster')">
           <span class="fontTitle">赠送好友15天会员</span>
           <span>会员赠送成功后您会获得10天会员。已赠送10人</span>
         </div>
@@ -84,7 +84,7 @@
     </div>
     <div class="handle_vip">
       <div class="content flex">
-        <van-button class="l btn" color="#494B5D">兑换会员</van-button>
+        <van-button class="l btn" color="#494B5D" to="/vipExchange">兑换会员</van-button>
         <van-button class="r btn" color="#F15663">立即开通</van-button>
       </div>
     </div>

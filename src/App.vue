@@ -88,6 +88,10 @@
     font-weight: bold;
   }
 
+  .fontWeight {
+    font-weight: bold;
+  }
+
   .lineOne {
     overflow: hidden;
     text-overflow: ellipsis;
