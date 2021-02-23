@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [
+const pageRoutes = [
   {
     path: '/',
     name: 'Index',
@@ -125,12 +125,41 @@ const routes = [
     meta: { title: '编辑地址' }
   },
   {
+    path: '/shareFriend',
+    name: 'ShareFriend',
+    component: () => import('@/views/my/shareFriend'),
+    meta: { title: '分享好友' }
+  },
+  {
+    path: '/dryingSheetList',
+    name: 'DryingSheetList',
+    component: () => import('@/views/home/dryingSheetList'),
+    meta: { title: '晒单列表' }
+  },
+  {
+    path: '/dryingSheetDetail',
+    name: 'DryingSheetDetail',
+    component: () => import('@/views/home/dryingSheetDetail'),
+    meta: { title: '晒单详情' }
+  }
+]
+
+const loginRoutes = [
+  {
     path: '/loginRegister',
     name: 'LoginRegister',
     component: () => import('@/views/other/LoginRegister'),
     meta: { title: '登录注册' }
+  },
+  {
+    path: '/tradeFinish',
+    name: 'TradeFinish',
+    component: () => import('@/views/other/tradeFinish'),
+    meta: { title: '交易完成' }
   }
 ]
+
+const routes = [...pageRoutes, ...loginRoutes]
 
 const router = new VueRouter({
   routes

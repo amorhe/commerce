@@ -1,20 +1,26 @@
 <template>
   <div class="container">
-    <van-radio-group v-model="radio" checked-color="#F15663">
-      <div class="addressList" v-for="(item,index) in 2" :key="index">
-        <div class="content_top">
-          <span class="fontTitle">陈先生，18522222222</span>
-          <span>四川省 成都市 高新区新希望国际B座29楼四川省 成都市 高际B座29楼</span>
-        </div>
-        <div class="content_bottom flex">
-          <van-radio :name="index">设置默认地址</van-radio>
-          <div>
-            <span class="fontTitle del">删除</span>
-            <span  class="fontTitle edit">编辑</span>
+    <div v-if="list > 0">
+      <van-radio-group v-model="radio" checked-color="#F15663">
+        <div class="addressList" v-for="(item,index) in list" :key="index">
+          <div class="content_top">
+            <span class="fontTitle">陈先生，18522222222</span>
+            <span>四川省 成都市 高新区新希望国际B座29楼四川省 成都市 高际B座29楼</span>
+          </div>
+          <div class="content_bottom flex">
+            <van-radio :name="index">设置默认地址</van-radio>
+            <div>
+              <span class="fontTitle del">删除</span>
+              <span class="fontTitle edit" @click="$router.push('./addressEdit')">编辑</span>
+            </div>
           </div>
         </div>
-      </div>
-    </van-radio-group>
+      </van-radio-group>
+    </div>
+    <div v-else class="noDiv">
+      <van-image class="img" :src="require('@/assets/img/noAddress.png')"></van-image>
+      <span>暂无地址</span>
+    </div>
     <div class="handle_box">
       <div class="content" @click="$router.push('./addressEdit')">添加地址</div>
     </div>
@@ -26,7 +32,8 @@
     name: 'addressList',
     data () {
       return {
-        radio: 0
+        radio: 0,
+        list: 3
       }
     }
   }
@@ -58,6 +65,7 @@
       }
     }
   }
+
   .handle_box {
     height: calc(133px + env(safe-area-inset-bottom));
 

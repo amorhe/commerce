@@ -59,6 +59,11 @@
     font-family: PingFangSC-Regular, PingFang SC;
   }
 
+  .container {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
   #nav {
     padding: 30px;
 
@@ -115,6 +120,23 @@
 
   .mr {
     margin-right: 15px;
+  }
+
+  .noDiv {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #757575;
+    font-size: 28px;
+    font-weight: bold;
+
+    .img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 40px;
+    }
   }
 
   .van-tabbar--fixed {

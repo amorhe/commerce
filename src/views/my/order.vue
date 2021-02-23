@@ -8,30 +8,36 @@
       <span :class="active === 4 ? 'active' : ''" @click="tabClick(4)">待晒单</span>
     </div>
     <div class="main_list">
-      <div class="list" v-for="item in 9" :key="item" @click.prevent="checkDetail">
-        <div class="content">
-          <div class="status_msg colorSm">订单待支付，预计00:12:48后自动关闭订单</div>
-          <div class="goods_box flex">
-            <van-image class="goods_img"
-                       src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=306152466,1066631514&fm=11&gp=0.jpg"></van-image>
-            <div class="goods_content">
-              <div>
-                <div class="lineMany title fontTitle">鲁花 食用油 低芥酸特香菜籽油 6.18L非转基因 物理压榨 新老包装随新老包装随机发新老包装随机发</div>
-                <div class="flexAlign colorSm">
-                  <span class="sku lineOne">一箱装一箱装一箱装一箱装一箱装一箱装一箱装一箱装一箱装一箱装…</span>
-                  <span>数量X1</span>
+      <div v-if="list > 0">
+        <div class="list" v-for="item in list" :key="item" @click.prevent="checkDetail">
+          <div class="content">
+            <div class="status_msg colorSm">订单待支付，预计00:12:48后自动关闭订单</div>
+            <div class="goods_box flex">
+              <van-image class="goods_img"
+                         src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=306152466,1066631514&fm=11&gp=0.jpg"></van-image>
+              <div class="goods_content">
+                <div>
+                  <div class="lineMany title fontTitle">鲁花 食用油 低芥酸特香菜籽油 6.18L非转基因 物理压榨 新老包装随新老包装随机发新老包装随机发</div>
+                  <div class="flexAlign colorSm">
+                    <span class="sku lineOne">一箱装一箱装一箱装一箱装一箱装一箱装一箱装一箱装一箱装一箱装…</span>
+                    <span>数量X1</span>
+                  </div>
                 </div>
+                <span class="price">¥59.90</span>
               </div>
-              <span class="price">¥59.90</span>
+            </div>
+            <div class="handle_div">
+              <van-button class="btn">分享海报</van-button>
+              <van-button class="btn" color="#F15663">立即支付</van-button>
+              <van-button class="btn" color="#494B5D" @click.stop="$router.push('./logistics')">查看物流</van-button>
+              <van-button class="btn" color="#3361C2" @click.stop="$router.push('./dryingSheet')">立即晒单</van-button>
             </div>
           </div>
-          <div class="handle_div">
-            <van-button class="btn">分享海报</van-button>
-            <van-button class="btn" color="#F15663">立即支付</van-button>
-            <van-button class="btn" color="#494B5D" @click.stop="$router.push('./logistics')">查看物流</van-button>
-            <van-button class="btn" color="#3361C2" @click.stop="$router.push('./dryingSheet')">立即晒单</van-button>
-          </div>
         </div>
+      </div>
+      <div v-else class="noDiv">
+        <van-image class="img" :src="require('@/assets/img/noOrder.png')"></van-image>
+        <span>暂无订单</span>
       </div>
     </div>
   </div>
@@ -43,7 +49,8 @@
     data () {
       return {
         active: 0,
-        tabs: ['全部', '待支付', '待发货', '待收货', '待晒单']
+        tabs: ['全部', '待支付', '待发货', '待收货', '待晒单'],
+        list: 9
       }
     },
     methods: {

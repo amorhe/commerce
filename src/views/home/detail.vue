@@ -61,29 +61,16 @@
       </van-cell>
     </div>
     <div id="anchor1"></div>
-    <van-grid :column-num="3" :border="false" square>
-      <van-grid-item class="grid" v-for="value in 10" :key="value">
+    <div class="grid">
+      <div v-for="value in 10" :key="value" @click="$router.push('./dryingSheetDetail')">
         <van-image class="sheet_img"
                    src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg"/>
-      </van-grid-item>
-    </van-grid>
-    <div class="checkAll">查看全部33个晒单</div>
-    <div id="anchor2"></div>
-    <div class="info"></div>
-    <div class="goods_action">
-      <div class="goodsAction flexAlign">
-        <div class="backHome">
-          <van-image class="icon" :src="require('@/assets/img/backHome.png')"/>
-          <span>回到首页</span>
-        </div>
-        <div>
-          <van-image class="icon" :src="require('@/assets/img/shareIcon.png')"/>
-          <span>分享海报</span>
-        </div>
-        <van-button class="confirmBtn" color="#F15663" @click="buyConfirm">69.90元起，立即购买</van-button>
       </div>
     </div>
-    <goodsSku :show="show" @change="changeShow"></goodsSku>
+    <div class="checkAll" @click="$router.push('./dryingSheetList')">查看全部33个晒单</div>
+    <div id="anchor2"></div>
+    <div class="info"></div>
+    <goodsSku></goodsSku>
   </div>
 </template>
 
@@ -100,8 +87,7 @@
           'https://img.yzcdn.cn/vant/apple-1.jpg',
           'https://img.yzcdn.cn/vant/apple-2.jpg'
         ],
-        swipeCurrent: 0,
-        show: false
+        swipeCurrent: 0
       }
     },
     methods: {
@@ -111,12 +97,6 @@
       },
       onChange (index) {
         this.swipeCurrent = index
-      },
-      buyConfirm () {
-        this.show = true
-      },
-      changeShow (e) {
-        this.show = e
       }
     }
   }
@@ -245,11 +225,24 @@
   }
 
   .grid {
-    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
-    .sheet_img {
+    > div {
       width: 243px;
       height: 243px;
+      margin-bottom: 10px;
+      margin-right: 10px;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      .sheet_img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
@@ -263,51 +256,6 @@
 
   .info {
     border-top: 12px #F9FAF9 solid;
-  }
-
-  .goods_action {
-    height: calc(env(safe-area-inset-bottom) + 120px);
-
-    .goodsAction {
-      width: 100vw;
-      height: 120px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      background: #fff;
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
-      color: #757575;
-      padding-bottom: env(safe-area-inset-bottom);
-
-      > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0 30px;
-        width: 78px;
-        font-size: 18px;
-
-        &.backHome {
-          height: 40px;
-          border-right: 1px #F0F4F6 solid;
-          justify-content: center;
-        }
-
-        .icon {
-          width: 40px;
-          height: 40px;
-          margin-bottom: 6px;
-        }
-      }
-
-      .confirmBtn {
-        width: 440px;
-        height: 80px;
-        color: #fff;
-        font-weight: 600;
-        margin-left: 17px;
-      }
-    }
   }
 
 </style>
