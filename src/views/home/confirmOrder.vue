@@ -44,9 +44,11 @@
       <span>+¥3</span>
     </div>
     <div class="msg_box">因平台特殊性，商品暂不支持七天无理由退换货物，若商品损坏、未及时发货、无法发货等情况下，均可联系客服申请售后服务</div>
-    <div class="confirm_pay flex">
-      <span class="fontTitle">实付金额：¥59.00</span>
-      <van-button class="btn">立即支付</van-button>
+    <div class="handle_confirm">
+      <div class="confirm_pay flex">
+        <span class="fontTitle">实付金额：¥59.00</span>
+        <van-button class="btn">立即支付</van-button>
+      </div>
     </div>
     <van-popup v-model="show" position="bottom" @click-overlay="cancel" safe-area-inset-bottom>
       <div class="modalAddress">
@@ -191,23 +193,28 @@
     color: #757575;
   }
 
-  .confirm_pay {
-    width: 100vw;
-    height: 120px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 0 30px;
-    box-sizing: border-box;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
-    background: #fff;
+  .handle_confirm {
+    height: calc(120px + env(safe-area-inset-bottom));
 
-    .btn {
-      height: 60px;
-      background: #F15663;
-      color: #fff;
-      border: none;
-      font-size: 22px;
+    .confirm_pay {
+      width: 100vw;
+      height: calc(120px + env(safe-area-inset-bottom));
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      padding: 0 30px;
+      box-sizing: border-box;
+      padding-bottom: env(safe-area-inset-bottom);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+      background: #fff;
+
+      .btn {
+        height: 60px;
+        background: #F15663;
+        color: #fff;
+        border: none;
+        font-size: 22px;
+      }
     }
   }
 
