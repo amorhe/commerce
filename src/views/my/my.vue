@@ -295,9 +295,11 @@
     .msg {
       position: fixed;
       left: 0;
-      bottom: calc(147px + env(safe-area-inset-bottom));
+      bottom: calc(120px + env(safe-area-inset-bottom));
       text-align: center;
       width: 100vw;
+      background: #fff;
+      height: 70px;
     }
   }
 
