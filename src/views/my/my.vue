@@ -266,17 +266,17 @@
 
     .tool {
       .content {
-        padding: 25px 20px;
+        padding: 25px 0;
         flex-wrap: wrap;
         display: flex;
         align-items: center;
         color: #757575;
 
         > div {
+          width: 25%;
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin-right: 88px;
           margin-bottom: 24px;
 
           &:nth-child(4n) {
